@@ -2,7 +2,9 @@ import 'dart:ffi';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:daily_wins/constants/constants.dart';
+import 'package:daily_wins/features/login/view/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -16,9 +18,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
+    // final screenHeight = MediaQuery.of(context).size.height;
     final double horizontalPadding = screenWidth * 0.06;
-    final double verticalPadding = screenHeight * 0.04;
+    // final double verticalPadding = screenHeight * 0.04;
     return Scaffold(
       backgroundColor: kAppGreen,
       body: SafeArea(
@@ -39,7 +41,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       animatedTexts: [
                         TypewriterAnimatedText(
                           'DailyWins',
-                          textStyle: TextStyle(
+                          textStyle: const TextStyle(
                             color: Colors.white,
                             fontFamily: 'Libre Caslon Text',
                             fontSize: 40.0,
@@ -52,7 +54,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30.0,
                 ),
                 Padding(
@@ -73,7 +75,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                             MaterialStateProperty.all<Color>(Colors.white),
                       ),
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'Register',
                         style: TextStyle(
                           color: kAppGreen,
@@ -92,7 +94,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     child: OutlinedButton(
                       style: ButtonStyle(
                         side: MaterialStateProperty.all(
-                          BorderSide(
+                          const BorderSide(
                             color: Colors.white,
                           ),
                         ),
@@ -103,8 +105,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           ),
                         ),
                       ),
-                      onPressed: () {},
-                      child: Text(
+                      onPressed: () {
+                        Get.to(LoginScreen());
+                      },
+                      child: const Text(
                         'Login',
                         style: TextStyle(
                           color: Colors.white,
