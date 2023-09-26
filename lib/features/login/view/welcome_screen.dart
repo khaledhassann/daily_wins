@@ -3,6 +3,7 @@ import 'dart:ffi';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:daily_wins/constants/constants.dart';
 import 'package:daily_wins/features/login/view/login_screen.dart';
+import 'package:daily_wins/features/login/view/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -74,7 +75,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         backgroundColor:
                             MaterialStateProperty.all<Color>(Colors.white),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => RegisterScreen());
+                      },
                       child: const Text(
                         'Register',
                         style: TextStyle(
@@ -106,7 +109,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         ),
                       ),
                       onPressed: () {
-                        Get.to(LoginScreen());
+                        Get.to(() => LoginScreen());
                       },
                       child: const Text(
                         'Login',
