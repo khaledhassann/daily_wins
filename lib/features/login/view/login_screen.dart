@@ -1,5 +1,7 @@
 import 'package:daily_wins/constants/constants.dart';
+import 'package:daily_wins/features/home/view/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -106,7 +108,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         backgroundColor:
                             MaterialStateProperty.all<Color>(Colors.white),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => HomeScreen());
+                      },
                       child: const Text(
                         'Login',
                         style: TextStyle(

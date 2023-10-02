@@ -1,5 +1,8 @@
 import 'package:daily_wins/constants/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../home/view/home_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   @override
@@ -105,7 +108,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         backgroundColor:
                             MaterialStateProperty.all<Color>(Colors.white),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => HomeScreen());
+                      },
                       child: const Text(
                         'Register',
                         style: TextStyle(
